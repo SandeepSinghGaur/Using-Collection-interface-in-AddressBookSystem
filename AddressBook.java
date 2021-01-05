@@ -1,7 +1,6 @@
-
 /**
  * @author Sandeep_Singh
- * functionality Add new Contact Address
+ * functionality Edit Employee information based on first and last name.
  *
  */
 import java.util.Scanner;
@@ -13,7 +12,6 @@ class Address {
 	private String email;
 
 	public static void main(String[] args) {
-		System.out.println("Welcome To Address Book Program");
 
 	}
 
@@ -48,6 +46,9 @@ class Address {
 }
 
 public class AddressBook {
+	public String firstName;
+	public String lastName;
+
 	private static void addContact() {
 		Scanner inp = new Scanner(System.in);
 		System.out.println("\nAddress:");
@@ -64,9 +65,25 @@ public class AddressBook {
 		inp.close();
 	}
 
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome to Address Book Program");
+		Scanner sc = new Scanner(System.in);
+		String Firstname = sc.nextLine();
+		String Lastname = sc.nextLine();
+		AddressBook obj1 = new AddressBook();
+		obj1.setFirstName(Firstname);
+		obj1.setLastName(Lastname);
 		addContact();
+		sc.close();
+
 	}
 }
 
